@@ -1,4 +1,4 @@
-# jquery-source
+# webpack-config
 
 
 
