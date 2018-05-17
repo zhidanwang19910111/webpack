@@ -11,9 +11,24 @@ module.exports = {
 	//插件将打包后的js 插入到页面中
 	plugins: [
 		new HtmlWebackPlugin({
-			filename: 'app.html',
+			filename: 'index.html',
 			template: './src/index.html'
 		})
-	]
+	],
+	//loader 用于处理文件内容
+	module: {
+		rules: [
+			{
+				test: /\.js$/,
+				use: [{
+					loader: 'babel-loader',
+					options: {
+						presets: ['react']
+					}
+				}]
+			}
+		]
+	}
+
 
 };
