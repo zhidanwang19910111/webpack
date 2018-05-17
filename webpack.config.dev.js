@@ -10,7 +10,10 @@ module.exports = {
 	},
 	//插件将打包后的js 插入到页面中
 	plugins: [
-		new HtmlWebackPlugin()
+		new HtmlWebackPlugin({
+			filename: 'app.html',
+			template: './src/index.html'
+		})
 	]
 
 };
