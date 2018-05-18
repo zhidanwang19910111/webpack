@@ -1,3 +1,21 @@
+/*@@font-face{
+	font-family: 'f';
+	src:url('../fonts/fontawesome-webfont.svg');
+}
+
+.rocket{
+	font-family: f;
+	font-size: 50px;
+}
+.rocket::before{
+	content: '\f014';
+}*/
 body{
-	
+	background: #dcdcdc;
+}
+.ot{
+	background: red;
+}
+.ot .ac{
+	font-size: 50px;
 }

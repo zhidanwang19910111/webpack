@@ -31,11 +31,32 @@ module.exports = {
 			//css loader
 			{
 				test: /\.css$/,
-				use: ['style-loader', 'css-loader' ]
+				use: [
+					'style-loader',
+					{
+						loader: 'css-loader',
+						options: {
+							module: true, //false 就是不使用css模块化，true就是模块化css
+							localIdentName: '[path]-[name]-[local]-[hash:base64:6]'
+						}
+					}
+				],
+				exclude: [
+					path.resolve(__dirname, 'node_modules'),
+					path.resolve(__dirname, 'src/common')
+				]
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader'],
+				include: [
+					path.resolve(__dirname, 'node_modules'),
+					path.resolve(__dirname, 'src/common')
+				]
 			},
 			//using to handle img file
 			{
-				test: /\.(jepg|gif|jpg)$/i,
+				test: /\.(jepg|gif|jpg|ttf|svg)$/i,
 				use: ['file-loader']
 			},
 			//url-loader 解析为 base64 增强版的file-loader ,可以限定他的长度，超过之后会压缩而不是生成base64

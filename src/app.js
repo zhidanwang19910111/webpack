@@ -9,16 +9,21 @@ C();
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './common/style/main.css';
 
+//css模块化写法 ,将类名进行重新编码
+import style from './common/style/main.css';
+import aac from './common/style/aac.css';
+
+import mousleStyle from './moule.css';
 
 import openImg from './common/img/dan.png';
 const pandaImg = require('./common/img/panda.jpg');
 
 ReactDOM.render(
 	<div>
-		<img src={openImg} />
-		<img src={pandaImg} />
+		<div className="ot">react
+			<span className={mousleStyle.ot}>50px</span>
+		</div>
 	</div>,
 	document.getElementById('app')
 )
