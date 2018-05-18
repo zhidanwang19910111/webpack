@@ -54,6 +54,10 @@ module.exports = {
 					path.resolve(__dirname, 'src/common')
 				]
 			},
+			{
+				test: /\.scss$/,
+				use: ['style-loader','css-loader', 'sass-loader']
+			},
 			//using to handle img file
 			{
 				test: /\.(jepg|gif|jpg|ttf|svg)$/i,

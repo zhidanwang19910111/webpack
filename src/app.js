@@ -16,13 +16,15 @@ import aac from './common/style/aac.css';
 
 import mousleStyle from './moule.css';
 
+import './common/style/main.scss'
+
 import openImg from './common/img/dan.png';
 const pandaImg = require('./common/img/panda.jpg');
 
 ReactDOM.render(
 	<div>
-		<div className="ot">react
-			<span className={mousleStyle.ot}>50px</span>
+		<div className="sass">react
+			<span>50px</span>
 		</div>
 	</div>,
 	document.getElementById('app')
