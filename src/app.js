@@ -9,9 +9,12 @@ C();
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './index.css';
+import './common/style/main.css';
 
+import openImg from './common/img/dan.png'
 ReactDOM.render(
-	<div>reactuq</div>,
+	<div>
+		<img src={openImg} />
+	</div>,
 	document.getElementById('app')
 )
