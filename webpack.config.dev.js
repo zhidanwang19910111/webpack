@@ -26,9 +26,16 @@ module.exports = {
 						presets: ['react']
 					}
 				}]
+			},
+			{
+				test: /\.css$/,
+				use: ['style-loader', 'css-loader' ]
 			}
 		]
-	}
-
-
+	},
+	//devserver
+	devServer: {
+        open: true,
+        port: 9000
+    }
 };

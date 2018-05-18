@@ -9,7 +9,9 @@ C();
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import './index.css';
+
 ReactDOM.render(
-	<div>react</div>,
+	<div>reactuq</div>,
 	document.getElementById('app')
 )
