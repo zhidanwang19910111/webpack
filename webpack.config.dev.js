@@ -18,6 +18,7 @@ module.exports = {
 	//loader 用于处理文件内容
 	module: {
 		rules: [
+			//jsx loader
 			{
 				test: /\.js$/,
 				use: [{
@@ -27,13 +28,27 @@ module.exports = {
 					}
 				}]
 			},
+			//css loader
 			{
 				test: /\.css$/,
 				use: ['style-loader', 'css-loader' ]
 			},
+			//using to handle img file
 			{
-				test: /\.png$/,
+				test: /\.(jepg|gif|jpg)$/i,
 				use: ['file-loader']
+			},
+			//url-loader 解析为 base64 增强版的file-loader ,可以限定他的长度，超过之后会压缩而不是生成base64
+			{
+				test: /\.(png|gif)$/i,
+				use: [
+					{
+						loader: 'url-loader',
+						options: {
+							limit: 500000
+						}
+					}
+				]
 			}
 		]
 	},
