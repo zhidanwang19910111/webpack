@@ -22,11 +22,9 @@ module.exports = {
 			{
 				test: /\.js$/,
 				use: [{
-					loader: 'babel-loader',
-					options: {
-						presets: ['react']
-					}
-				}]
+					loader: 'babel-loader'
+				}],
+				exclude: [path.resolve(__dirname, "node_modules")]
 			},
 			//css loader
 			{

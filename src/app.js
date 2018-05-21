@@ -24,7 +24,7 @@ const pandaImg = require('./common/img/panda.jpg');
 ReactDOM.render(
 	<div>
 		<div className="sass">react
-			<span>50px</span>
+			<span>50px{pandaImg}</span>
 		</div>
 	</div>,
 	document.getElementById('app')
