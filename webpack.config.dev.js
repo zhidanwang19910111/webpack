@@ -1,19 +1,21 @@
 const path = require('path');
 const HtmlWebackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 module.exports = {
 	//入口
 	entry: './src/app.js',
 	//出口
 	output:  {
-		path: path.resolve(__dirname, 'dist'),
-		filename: 'main.js'
+		path: path.resolve(__dirname, 'dist/assets'),
+		filename: 'js/main.js'
 	},
 	//插件将打包后的js 插入到页面中
 	plugins: [
 		new HtmlWebackPlugin({
-			filename: 'index.html',
+			filename: '../index.html',
 			template: './src/index.html'
-		})
+		}),
+		new CleanWebpackPlugin(["dist"])
 	],
 	//loader 用于处理文件内容
 	module: {
@@ -59,7 +61,13 @@ module.exports = {
 			//using to handle img file
 			{
 				test: /\.(jepg|gif|jpg|ttf|svg)$/i,
-				use: ['file-loader']
+				use: {
+					loader: 'file-loader',
+					options: {
+						name: 'img/[name][hash].[ext]'
+					}
+					
+				}
 			},
 			//url-loader 解析为 base64 增强版的file-loader ,可以限定他的长度，超过之后会压缩而不是生成base64
 			{
@@ -68,6 +76,7 @@ module.exports = {
 					{
 						loader: 'url-loader',
 						options: {
+							name: 'img',
 							limit: 500000
 						}
 					}
