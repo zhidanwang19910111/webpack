@@ -7,12 +7,13 @@ module.exports = {
 	//出口
 	output:  {
 		path: path.resolve(__dirname, 'dist/assets'),
-		filename: 'js/main.js'
+		filename: 'js/main.js',
+		publicPath: '/'
 	},
 	//插件将打包后的js 插入到页面中
 	plugins: [
 		new HtmlWebackPlugin({
-			filename: '../index.html',
+			filename: 'index.html',
 			template: './src/index.html'
 		}),
 		new CleanWebpackPlugin(["dist"])
@@ -87,6 +88,8 @@ module.exports = {
 	//devserver
 	devServer: {
         open: true,
-        port: 9000
+        port: 9000,
+        contentBase: './src/common',
+        publicPath: '/'
     }
 };

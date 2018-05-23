@@ -25,6 +25,7 @@ ReactDOM.render(
 	<div>
 		<div className="sass">react
 			<span>50px{pandaImg}</span>
+			<img src={pandaImg} alt="" />
 		</div>
 	</div>,
 	document.getElementById('app')
