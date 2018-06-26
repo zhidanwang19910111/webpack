@@ -1,3 +1,5 @@
-export default function c(){
+/*export default function c(){
 	console.log('module c')
-}
+}*/
+
+console.log('moudle c')

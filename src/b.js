@@ -1,3 +1,5 @@
-export default function b(){
+/*export default function b(){
 	console.log('module b')
-}
+}*/
+
+console.log('module b')
